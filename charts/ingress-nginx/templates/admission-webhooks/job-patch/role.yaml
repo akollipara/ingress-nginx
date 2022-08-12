@@ -9,7 +9,7 @@ metadata:
     "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
   labels:
     {{- include "ingress-nginx.labels" . | nindent 4 }}
-    app.kubernetes.io/component: admission-webhook
+    component: admission-webhook
     {{- with .Values.controller.admissionWebhooks.patch.labels }}
     {{- toYaml . | nindent 4 }}
     {{- end }}

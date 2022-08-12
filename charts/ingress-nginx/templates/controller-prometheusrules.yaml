@@ -8,7 +8,7 @@ metadata:
 {{- end }}
   labels:
     {{- include "ingress-nginx.labels" . | nindent 4 }}
-    app.kubernetes.io/component: controller
+    component: controller
   {{- if .Values.controller.metrics.prometheusRule.additionalLabels }}
     {{- toYaml .Values.controller.metrics.prometheusRule.additionalLabels | nindent 4 }}
   {{- end }}

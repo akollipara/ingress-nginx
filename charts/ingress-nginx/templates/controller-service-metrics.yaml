@@ -7,7 +7,7 @@ metadata:
 {{- end }}
   labels:
     {{- include "ingress-nginx.labels" . | nindent 4 }}
-    app.kubernetes.io/component: controller
+    component: controller
   {{- if .Values.controller.metrics.service.labels }}
     {{- toYaml .Values.controller.metrics.service.labels | nindent 4 }}
   {{- end }}
@@ -41,5 +41,5 @@ spec:
     {{- end }}
   selector:
     {{- include "ingress-nginx.selectorLabels" . | nindent 4 }}
-    app.kubernetes.io/component: controller
+    component: controller
 {{- end }}

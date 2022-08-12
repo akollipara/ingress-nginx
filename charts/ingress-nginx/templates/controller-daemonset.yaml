@@ -5,7 +5,7 @@ kind: DaemonSet
 metadata:
   labels:
     {{- include "ingress-nginx.labels" . | nindent 4 }}
-    app.kubernetes.io/component: controller
+    component: controller
     {{- with .Values.controller.labels }}
     {{- toYaml . | nindent 4 }}
     {{- end }}
@@ -18,7 +18,7 @@ spec:
   selector:
     matchLabels:
       {{- include "ingress-nginx.selectorLabels" . | nindent 6 }}
-      app.kubernetes.io/component: controller
+      component: controller
   revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
   {{- if .Values.controller.updateStrategy }}
   updateStrategy: {{ toYaml .Values.controller.updateStrategy | nindent 4 }}
@@ -34,7 +34,7 @@ spec:
     {{- end }}
       labels:
         {{- include "ingress-nginx.selectorLabels" . | nindent 8 }}
-        app.kubernetes.io/component: controller
+        component: controller
         {{- with .Values.controller.labels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}

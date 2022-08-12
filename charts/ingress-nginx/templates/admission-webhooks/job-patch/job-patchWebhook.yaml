@@ -12,7 +12,7 @@ metadata:
     {{- end }}
   labels:
     {{- include "ingress-nginx.labels" . | nindent 4 }}
-    app.kubernetes.io/component: admission-webhook
+    component: admission-webhook
     {{- with .Values.controller.admissionWebhooks.patch.labels }}
     {{- toYaml . | nindent 4 }}
     {{- end }}
@@ -29,7 +29,7 @@ spec:
     {{- end }}
       labels:
         {{- include "ingress-nginx.labels" . | nindent 8 }}
-        app.kubernetes.io/component: admission-webhook
+        component: admission-webhook
         {{- with .Values.controller.admissionWebhooks.patch.labels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}

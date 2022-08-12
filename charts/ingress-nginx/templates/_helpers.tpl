@@ -128,8 +128,8 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 Selector labels
 */}}
 {{- define "ingress-nginx.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "ingress-nginx.name" . }}
-app.kubernetes.io/instance: {{ .Release.Name }}
+app: {{ include "ingress-nginx.name" . }}
+release: {{ .Release.Name }}
 {{- end -}}
 
 {{/*
