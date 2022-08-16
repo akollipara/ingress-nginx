@@ -37,5 +37,4 @@ spec:
     {{- end }}
   selector:
     {{- include "ingress-nginx.selectorLabels" . | nindent 4 }}
-    component: default-backend
 {{- end }}

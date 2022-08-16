@@ -15,7 +15,6 @@ spec:
   selector:
     matchLabels:
       {{- include "ingress-nginx.selectorLabels" . | nindent 6 }}
-      component: default-backend
   minAvailable: {{ .Values.defaultBackend.minAvailable }}
 {{- end }}
 {{- end }}

@@ -8,7 +8,7 @@ metadata:
 {{- end }}
   labels:
     {{- include "ingress-nginx.labels" . | nindent 4 }}
-    component: controller
+    component: "controller"
   {{- if .Values.controller.metrics.serviceMonitor.additionalLabels }}
     {{- toYaml .Values.controller.metrics.serviceMonitor.additionalLabels | nindent 4 }}
   {{- end }}
@@ -44,5 +44,4 @@ spec:
   selector:
     matchLabels:
       {{- include "ingress-nginx.selectorLabels" . | nindent 6 }}
-      component: controller
 {{- end }}
